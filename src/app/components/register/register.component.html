@@ -1,0 +1,109 @@
+<div class="flex" style="height: 100vh">
+  <div class="col-6 m-3 flex flex-column justify-content-center">
+    <div class="m-auto">
+      <div class="text-center">
+        <p-avatar
+          image="assets/top1.jpg"
+          styleClass="mr-2"
+          size="xlarge"
+          shape="circle"
+        ></p-avatar>
+        <h1>Register for an account</h1>
+      </div>
+      <p-message
+        *ngIf="errorMsg"
+        severity="error"
+        [text]="errorMsg"
+        styleClass="mb-2 w-full"
+      ></p-message>
+      <div class="field">
+        <label for="name">Name</label>
+        <input
+          [(ngModel)]="customer.name"
+          id="name"
+          pInputText
+          placeholder="Jane"
+          type="text"
+          class="w-full"
+        />
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input
+          [(ngModel)]="customer.email"
+          id="email"
+          pInputText
+          placeholder="Jane@amigoscode.com"
+          type="email"
+          class="w-full"
+        />
+      </div>
+      <div class="field">
+        <label for="age">Age</label>
+        <input
+          [(ngModel)]="customer.age"
+          id="age"
+          pInputText
+          placeholder="34"
+          type="number"
+          class="w-full"
+        />
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input
+          [(ngModel)]="customer.password"
+          id="password"
+          pInputText
+          placeholder="Password"
+          type="password"
+          class="w-full"
+        />
+      </div>
+      <div class="field">
+        <label for="gender">Gender</label>
+        <select
+          [(ngModel)]="customer.gender"
+          class="p-dropdown w-full custom-select"
+          id="gender"
+        >
+          <option value="">Select an option</option>
+          <option value="MALE">MALE</option>
+          <option value="FEMALE">FEMALE</option>
+        </select>
+      </div>
+      <button
+        (click)="createAccount()"
+        pButton
+        label="Create an account"
+        class="w-full"
+      ></button>
+      <button
+        (click)="login()"
+        pButton
+        label="Have an account? Login now."
+        class="w-full p-button-link text-left pl-0"
+      ></button>
+    </div>
+  </div>
+  <div
+    class="col-6 flex flex-column justify-content-center align-items-center right-container"
+  >
+    <ngx-typed-js
+      [strings]="[
+        'Hello there 👋',
+        ' Wherever the art of medicine is loved, there is also a love of humanity',
+        'Better Healthcare',
+        'Better Tomorrow'
+      ]"
+      [loop]="true"
+      [typeSpeed]="100"
+    >
+      <h1 class="typing text-white font-cursive">
+        <!-- Better Healthcare, Better Tomorrow -->
+        <!-- <a href="https://amigoscode.com/courses" target="_blank">Enrol Now</a> -->
+      </h1>
+    </ngx-typed-js>
+    <img class="background p-6 pt-0" src="assets/healthcare_animation-1.gif" />
+  </div>
+</div>
